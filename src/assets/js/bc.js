@@ -30,7 +30,7 @@ export function startReceiveBroadcast(chat_url) {
                 let link = $("<a href=\"javascript:void(0)\" class=\"bc-close\" aria-label=\"close\"></a>").html("<em class='fa fa-close'></em>");
                 link.on("click",() => { div.remove(); });
                 let alink = $("<a href=\"javascript:void(0)\" class=\"app-text\"></a>").html(msg.message);
-                alink.on("click",function() { openPage(msg.app); });
+                alink.on("click",() => { openPage(msg.app); link.trigger("click"); });
                 let span = $("<span></span>").append(alink);
                 let body = $("body");
                 let isz = body.find("div.bc-layer").length;
